@@ -1,0 +1,81 @@
+//
+// Users
+//
+
+
+
+
+.kt-widget.kt-widget--users {
+    .kt-widget__item {
+        display: flex;
+        margin: 1.3rem 0 2.3rem 0;
+
+        .kt-media img {
+            width: 100%;
+            max-width: 43px;
+            height: 43px;
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+
+        .kt-widget__info {
+            padding-top: 0.1rem;
+            flex: 3;
+            margin-left: 1rem;
+
+            .kt-widget__section {
+                display: flex;
+                align-items: center;
+
+                .kt-widget__username {
+                    font-size: 1.1rem;
+                    color: kt-base-color(label, 4);
+                    font-weight: 500;
+
+                    &:hover {
+                        color: kt-brand-color();
+                        transition: color 0.3s ease;
+                    }
+                }
+
+                .kt-badge {
+                    margin-left: 0.5rem;
+                }
+            }
+
+            .kt-widget__desc {
+                display: block;
+                color: kt-base-color(label, 2);
+                font-weight: 500;
+            }
+        }
+
+        .kt-widget__action {
+            text-align: right;
+            padding-top: 0.2rem;
+            flex: 1.1;
+
+            .kt-widget__date {
+                display: block;
+                color: kt-base-color(label, 2);
+                font-weight: 500;
+            }
+        }
+    }
+}
+
+@include kt-tablet-and-mobile {
+    .kt-widget.kt-widget--users {
+        .kt-widget__item {
+            .kt-widget__info {
+                flex: 1.5;
+            }
+
+            .kt-widget__action {
+                flex: 1;
+            }
+        }
+    }
+}

@@ -1,0 +1,114 @@
+//
+// Widget31
+//
+
+
+
+
+.kt-widget31 {
+	.kt-widget31__item {
+		display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 1.5rem;
+
+		.kt-widget31__content {
+			display: flex;
+        	justify-content: space-between;
+        	align-items: center;
+
+			.kt-widget31__pic {
+				> img {
+					width: 4rem;
+          border-radius: 50%;
+				}
+			}
+
+			.kt-widget31__info {
+				padding: 0 1.2rem;
+        flex-grow: 1;
+
+				.kt-widget31__username {
+					font-weight: 500;
+          font-size: 1.1rem;
+					color: kt-base-color(label, 3);
+					transition: color 0.3s ease;
+
+					&:hover {
+						color: kt-brand-color();
+						transition: color 0.3s ease;
+					}
+				}
+
+				.kt-widget31__text {
+					font-size: 1rem;
+					margin: 0;
+					font-weight: 400;
+          color: kt-base-color(label, 2);
+				}
+			}
+
+			.kt-widget31__progress {
+				flex: 1;
+                padding-right: 3rem;
+
+				.kt-widget31__stats {
+					display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin-bottom: 0.7rem;
+
+					> span {
+                        line-height: 1.1;
+
+                        &:first-child {
+                            font-size: 1.1rem;
+                            font-weight: 500;
+                            color: kt-base-color(label, 3);
+                        }
+
+                        &:last-child {
+                            font-size: 1rem;
+                            color: kt-base-color(label, 2);
+                            font-weight: 400;
+                        }
+                    }
+				}
+
+				.progress {
+					width: 100%;
+				}
+			}
+
+			&:last-child {
+				display: flex;
+	            justify-content: space-between;
+	            align-items: center;
+	            width: 50%;
+			}
+		}
+
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+}
+
+
+@include kt-mobile {
+    .kt-widget31 {
+        .kt-widget31__item {
+        	display: flex;
+    		flex-wrap: wrap;
+
+        	.kt-widget31__content {
+        		width: 100%;
+
+  				&:last-child {
+	            	width: 100%;
+	            	margin: 1rem 0;
+				}
+        	}
+        }
+    }
+}

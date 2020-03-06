@@ -1,0 +1,86 @@
+//
+// Widget11
+//
+
+
+
+
+.kt-widget11 {
+    .table-responsive {
+        overflow-y: hidden;
+    }
+
+    // Table
+    .table {
+        // Thead
+        thead {
+            > tr {
+                > td {
+                    padding: 0;                         
+                    vertical-align: top;
+                    border-top: 0;
+                    font-weight: 500;
+                    color: kt-base-color(label, 2);
+                }
+            }     
+        }
+
+        // Tbody
+        tbody {
+            > tr {
+                > td {
+                    border: 0;
+                    padding-left: 0;
+                    padding-right: 0.5rem;    
+                    padding-top: 20px;                                                      
+                    vertical-align: top;   
+                    color: kt-base-color(label, 3);
+
+                    > label {
+                        right: 0;
+                        top: 0.5rem;
+                        vertical-align: top;
+                    }
+
+                    .kt-widget11__chart {
+                        position: relative;
+                        margin-top: -0.6rem;
+                    }
+
+                    &:last-child {
+                        padding-right: 0;   
+                    }                  
+                }
+
+                .kt-widget11__title {
+                    font-size: 1.1rem;
+                    font-weight: 500; 
+                    display: block;
+                    color: kt-base-color(label, 3);
+                    transition: color .3s ease;
+
+                    &:hover {
+                        color: kt-brand-color();
+                        transition: color .3s ease;
+                    }
+
+                    > span {
+                        color: kt-base-color(label, 2);
+                    }
+                }
+
+                .kt-widget11__sub {
+                    display: block;
+                    font-size: 1rem;
+                }
+
+                border-bottom: 1px dashed kt-base-color(grey, 2);
+
+                &:last-child {
+                    border: 0;
+                }   
+            }    
+        }
+    }
+}                                
+ 

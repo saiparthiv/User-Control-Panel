@@ -1,0 +1,62 @@
+//
+// Widget25
+//
+
+
+
+
+.kt-widget25 {
+    margin: 2rem 0;
+
+    .kt-widget25__stats {
+        font-size: 4.5rem;
+        font-weight: 500;
+        color: kt-base-color(label, 3);
+    }
+
+    .kt-widget25__subtitle {
+        color: kt-base-color(label, 2);
+        font-size: 1.1rem;
+        padding-left: 1rem;
+    }
+
+    .kt-widget25__items {
+        display: flex; 
+        align-items: center; 
+        margin-top: 2rem; 
+
+        .kt-widget25__item {
+            flex: 1;
+
+        	.kt-widget25__progress-sub {
+                display: inline-block;  
+                margin-top: 6px;                
+        		font-size: 1.1rem;
+                font-weight: 500;
+        	} 
+
+            .kt-widget25__number {
+                font-size: 2rem;
+                font-weight: 600;
+            }
+
+            .progress {
+                height: 0.5rem;
+            }
+
+            .kt-widget25__desc {
+                font-size: 1.1rem;
+                font-weight: 500;
+                color: kt-base-color(label, 2);
+                padding-top: 0.7rem;
+                display: block;
+            }
+
+            &:not(:first-child):not(:last-child) {
+                margin: 0 2rem;
+            }    
+        }
+    }
+}
+
+ 

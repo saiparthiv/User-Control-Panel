@@ -1,0 +1,70 @@
+//
+// Widget7
+//
+
+
+
+
+.kt-widget7 {
+    .kt-widget7__desc {
+        text-align: center;
+        margin-top: 7rem;
+        font-size: 1.3rem;
+        color: kt-base-color(label, 3);
+    }
+
+    .kt-widget7__content {
+        display: flex;
+        justify-content: center;                            
+        align-items: center;
+        margin-top: 2rem;
+             
+        .kt-widget7__userpic {
+            img {                     
+                width: 3.6rem;                    
+                border-radius: 50%;                                                    
+            }                
+        }
+
+        .kt-widget7__info {
+            padding-left: 1rem;
+
+            .kt-widget7__username {
+                color: kt-base-color(label, 3);
+                font-weight: 500;  
+                font-size: 1.4rem; 
+                margin-bottom: 0;            
+            }
+                    
+            .kt-widget7__time {
+                color: kt-base-color(label, 2);
+                font-size: 0.9rem;          
+            } 
+        }               
+    }             
+
+    .kt-widget7__button {
+        text-align: center;
+        margin-top: 2rem;
+    } 
+
+    // Light skin
+    &.kt-widget7--skin-light {
+        .kt-widget7__desc {
+            color: #fff;   
+        }
+                
+        .kt-widget7__info {
+            .kt-widget7__username {
+                color: #fff;                   
+            }
+                        
+            .kt-widget7__time {
+                color: #fff;
+                opacity: 0.8;                     
+            }          
+        }  
+    }          
+} 
+
+

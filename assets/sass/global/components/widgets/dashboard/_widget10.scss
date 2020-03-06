@@ -1,0 +1,56 @@
+//
+// Widget10
+//
+
+
+
+
+.kt-widget10 {
+    // Chart
+    .kt-widget10__chart {
+        margin-top: 1rem;
+        margin-bottom: 3.5rem;
+        position: relative;
+
+        canvas {
+            @include kt-rounded {
+                border-radius: 8px;
+            }
+        } 
+    }
+
+    // Items
+    .kt-widget10__items {
+        // Item
+        .kt-widget10__item {
+            // Stats
+            .kt-widget10__stats {
+                font-size: 1.1rem;
+                font-weight: 700;  
+                color: kt-base-color(label, 2);
+            }
+                
+            // Text
+            .kt-widget10__text {
+                font-size: 0.9rem;
+                float: right;
+                margin-top: 0.3rem;
+                color: kt-base-color(label, 2);
+            }
+
+            // Progress
+            .progress {
+                margin-bottom: 1.6rem;
+            }    
+        }            
+    }
+    // Description
+    .kt-widget10__desc {
+        margin-top: 1.6rem;
+        font-size: 1rem;
+    }        
+}     	 
+ 
+ 
+
+ 

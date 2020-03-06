@@ -1,0 +1,77 @@
+//
+// Widget3
+//
+
+
+
+
+.kt-widget3 {
+          
+    // widjet header
+    .kt-widget3__item {
+        margin-bottom: 1rem;
+
+        .kt-widget3__header {
+            margin-top: 1.5rem;
+            padding-bottom: 0.8rem; 
+            display: flex;
+            justify-content: space-between;
+            align-items: center; 
+
+            .kt-widget3__user-img {
+                .kt-widget3__img {
+                    width: 3.2rem;                        
+                    border-radius: 50%;
+                }
+            }
+
+            // widget info
+            .kt-widget3__info {
+                padding-left: 1rem;
+
+                .kt-widget3__username {
+                    font-weight: 500;  
+                    color: kt-base-color(label, 3);
+                    transition: color 0.3s ease;
+
+                    &:hover {
+                        color: kt-brand-color();
+                        transition: color 0.3s ease;
+                    }
+                } 
+
+                .kt-widget3__time {
+                    font-size: 0.9rem;
+                     font-weight: 400;  
+                    color: kt-base-color(label, 2);
+                } 
+
+            }
+
+            // widget status
+            .kt-widget3__status{
+                font-weight:  500;  
+                flex-grow: 1; 
+                text-align: right;                          
+            }                       
+        }
+
+        // widget body
+        .kt-widget3__body {
+            .kt-widget3__text {
+                color: kt-base-color(label, 2);
+            }
+        }
+
+        border-bottom: 0.07rem dashed kt-base-color(grey, 2);
+             
+        &:last-child {
+            border-bottom: 0;
+        } 
+
+        &:first-child .kt-widget3__header {
+            margin-top: 0;
+        }  
+    }   
+}
+

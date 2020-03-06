@@ -1,0 +1,39 @@
+//
+// Link
+//
+
+
+
+
+.kt-link {
+    text-decoration: none;
+  	position: relative;
+  	display: inline-block;
+
+    &:after {
+    	display: block;
+    	content: '';
+		position: absolute;
+		bottom: 0;
+        top: 1rem;  
+		left: 0;
+		width: 0%;
+		transition: width 0.3s ease;
+    }
+
+    &:hover {
+    	text-decoration: none !important;
+
+    	&:after {				
+    		width: 100%;
+    	}
+    }
+
+    @include kt-link-color(kt-get($kt-font-color, link, default), kt-get($kt-font-color, link, hover));
+
+    @each $name, $color in $kt-state-colors {
+        &.kt-link--#{$name} {
+            @include kt-link-color(kt-get($color, base), darken(kt-get($color, base), 10%));
+        }
+    }
+}

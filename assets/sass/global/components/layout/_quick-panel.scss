@@ -1,0 +1,197 @@
+//
+// Quick Panel
+//
+
+
+
+$kt-quick-panel: (
+	self: (
+		padding: 0,
+		bg-color: #fff,
+		shadow: 0px 0px 28px 0px rgba(82,63,105,0.13),
+
+		offcanvas: (
+			layout: (
+				self: (
+					zindex: 1001,
+					direction: right,
+					transition:	all .3s ease,
+					width: 425px
+				),
+
+				close: (
+					size: 25px,
+					font-size: 1.4rem
+				)
+			),
+
+			skin: (
+				self: (
+					bg-color: #ffffff,
+					shadow: 0px 1px 9px -3px rgba(0,0,0,0.75)
+				),
+
+				overlay: (
+					bg-color: rgba(#000000, 0.1),
+				),
+
+				close: (
+					icon-color: (
+						default: #968ad4,
+						hover: #ffffff
+					),
+					bg-color: (
+						default: darken(#f8f8fb, 5%),
+						hover: kt-brand-color()
+					)
+				)
+			)
+		)
+	)
+);
+
+// Base
+.kt-quick-panel {
+	background-color: kt-get($kt-quick-panel, self, bg-color);
+	box-shadow: kt-get($kt-quick-panel, self, shadow);
+	padding: kt-get($kt-quick-panel, self, padding);
+
+	// Close
+	.kt-quick-panel__close {
+		position: absolute;
+		z-index: 1;
+		right: 1.5rem;
+		top: 1rem;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 28px;
+		height: 28px;
+		background-color: kt-base-color(grey, 1);
+		@include kt-transition();
+
+		i {
+			@include kt-transition();
+			font-size: 0.8rem;
+			color: kt-base-color(label, 2);
+		}
+
+		@include kt-rounded {
+			border-radius: $kt-border-radius;
+		}
+
+		&:hover {
+			@include kt-transition();
+			background-color: kt-brand-color();
+
+			i {
+				@include kt-transition();
+				color: kt-brand-color(inverse);
+			}
+		}
+	}
+
+	// Nav
+	.kt-quick-panel__nav {
+		display: flex;
+		position: relative;
+		padding: 1.5rem 0 0 0;
+		align-items: center;
+
+		.nav {
+			width: 100%;
+			padding: 0 1.5rem;
+			margin: 0;
+
+			.nav-item {
+				margin-right: 1.5rem;
+
+				.nav-link {
+					font-size: 1rem;
+					color: kt-base-color(label, 2);
+				}
+
+				&:last-child {
+					margin-right: 0;
+				}
+			}
+		}
+	}	
+
+	// Content
+	.kt-quick-panel__content {
+		padding: 1.5rem 0;
+
+		.ps {
+			> .ps__rail-y {
+    			right: 5px !important;
+    		}
+    	}
+	}
+
+	.kt-quick-panel__content-padding-x  {
+		padding-left: 1.5rem;
+		padding-right: 1.5rem;
+	}
+}
+
+// Build offcanvas mode
+@include kt-offcanvas-build(kt-quick-panel, default, kt-get($kt-quick-panel, self, offcanvas) );
+
+// Mobile view
+@include kt-tablet-and-mobile {
+	// Base
+	.kt-quick-panel {
+
+		// Close
+		.kt-quick-panel__close {
+			right: 0.5rem;
+			top: 0.5rem;
+			width: 24px;
+			height: 24px;
+
+			i {
+				font-size: 0.8rem;
+			}
+		}
+
+		// Nav
+		.kt-quick-panel__nav {
+			padding: 1rem 0;
+
+			.nav {
+				.nav-item {
+					margin-right: 1rem;
+
+					&:last-child {
+						margin-right: 0;
+					}
+				}
+
+				.nav-link {
+					padding-top: 0.5rem;
+					padding-bottom: 0.5rem;
+					font-size: 0.9rem;
+					font-weight: 400;
+					text-transform: uppercase;
+				}
+			}
+
+			// Close
+			.kt-quick-panel__close {
+				i {
+					font-size: 1.1rem;
+				}
+			}
+		}
+
+		// Content
+		.kt-quick-panel__content {
+			padding: 1rem 0.5rem 1rem 1rem;
+
+			.tab-pane {
+				padding-right: 0.5rem;
+			}
+		}
+	}
+}

@@ -1,0 +1,45 @@
+//
+// Widget9
+//
+
+
+
+
+.kt-widget9 {
+    padding: 2.2rem;
+        
+    .kt-widget9__header {
+        padding: 1.1rem 0;
+        margin-bottom: 0.5rem;
+
+        .kt-widget9__title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            margin-bottom: 0;
+            color: kt-base-color(label, 3);
+        }
+
+        .kt-widget9__desc {
+            display: inline-block;
+            margin-top: 0.2rem;
+            color: kt-base-color(label, 2);
+        }  
+
+        .kt-widget9__text {
+            color: kt-base-color(label, 2);
+        }             
+    }        
+
+    .kt-widget9__chart {
+        position: relative;
+        margin-top: 0.5rem;
+
+        .kt-widget9__stat {
+            font-size: 2.4rem;
+            font-weight: 700;
+            color: kt-base-color(label, 2);
+        }           
+    }     
+} 
+
+

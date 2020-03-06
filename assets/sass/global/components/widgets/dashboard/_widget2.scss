@@ -1,0 +1,98 @@
+//
+// Widget2
+//
+
+
+
+
+.kt-widget2 {
+    .kt-widget2__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;        
+        margin-bottom: 1.4rem;
+        position: relative;               
+
+        // state bar
+        &:before {
+            position: absolute;
+            display: block;
+            width: 0.3rem;
+            border-radius: 4px;                
+            width: 4px;
+            border-radius: 4px;
+            height: 100%;
+            left: 0.8rem;
+            content: "";                                                   
+        }  
+            
+        // checkbox
+        .kt-widget2__checkbox {
+            padding: 1rem 0 0 2.2rem;                              
+        }
+
+        // description text
+        .kt-widget2__info {
+            display: flex;
+            flex-direction: column;
+            padding-left: 0.23rem 0 0 0.3rem;                 
+
+            .kt-widget2__title {
+                font-weight: 500;
+                margin: 0;
+                color: kt-base-color(label, 3);
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: kt-brand-color();
+                    transition: color 0.3s ease;
+                }
+            }
+
+            .kt-widget2__username {
+                text-decoration: none;                    
+                font-size: 0.9rem;
+                color: kt-base-color(label, 2);
+                transition: color 0.3s ease;
+
+                &:hover {
+                    text-decoration: none;
+                    color: kt-brand-color();
+                    transition: color 0.3s ease;
+                }                    
+            }
+        }
+
+        // actions
+        .kt-widget2__actions {
+            flex-grow: 1; 
+            text-align: right;
+            padding: 0 0.5rem 0 0.8rem;      
+
+            a {
+                text-decoration: none;
+            }
+
+            i {
+                font-size: 2.1rem;
+            }
+        }
+
+        // kt-widget2__action hover
+        &:hover {
+            .kt-widget2__actions {
+                //opacity: 1; 
+            }
+        }
+
+        @each $name, $color in $kt-state-colors {
+            &.kt-widget2__item--#{$name} {
+                &:before {
+                    background: kt-get($color, base);
+                }
+            }
+        }   
+    }                            
+} 
+
+

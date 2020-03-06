@@ -1,0 +1,82 @@
+//
+// Demo
+//
+
+
+
+
+.kt-demo-icon  {
+    margin-bottom: 20px; 
+    display: flex;
+    align-items: center;
+    padding: 20px;
+
+    @include kt-rounded {
+        border-radius: $kt-border-radius;
+    }
+
+    .kt-demo-icon__preview {
+        display: flex;
+        padding-right: 20px;
+        flex: 0 0 40px;  
+
+        i {
+            line-height: 0;
+            vertical-align: middle;
+            font-size: 2.5rem !important; 
+        }
+    }
+
+    .kt-demo-icon__class {
+        color: kt-base-color(label, 2);
+        display: flex;
+        flex-grow: 1;
+        padding: 0;
+        font-size: 1rem;
+        font-weight: 400;
+    }
+
+    &:hover {
+        background-color: kt-base-color(grey, 1);
+    }
+
+    &.kt-demo-icon--overlay {
+        position: relative;
+
+        svg {
+            height:  40px;
+            width: 40px;
+        }
+
+        .kt-demo-icon__overlay {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(#000, 0.05);
+            transition: all 0.3 ease;
+            opacity: 0;
+
+            .btn {
+                margin-right: 10px;
+
+                &:last-child {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        &:hover {
+            background-color: transparent;
+
+            .kt-demo-icon__overlay {
+                transition: all 0.3 ease;
+                opacity: 1;
+            }
+        }
+    }
+}

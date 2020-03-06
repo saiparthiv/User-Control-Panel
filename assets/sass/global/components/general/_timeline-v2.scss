@@ -1,0 +1,83 @@
+//
+// Timeline v2
+//
+
+
+
+
+.kt-timeline-v2 {
+	position: relative;
+
+	&:before {
+		content: '';
+		position: absolute;
+		left: 4.85rem;
+		width: 0.214rem;
+		top: 5px;
+		bottom: 5px;
+		height: calc(100% - 5px);
+		background-color: #E7E9F5;
+	}
+
+	.kt-timeline-v2__items {
+		.kt-timeline-v2__item {
+			display: table;
+			position: relative;
+			margin-bottom: 1.75rem;
+
+			.kt-timeline-v2__item-time {
+				display: table-cell;
+				font-size: 1.3rem;
+				font-weight: 500;
+				vertical-align: top;
+				position: absolute;
+				padding-top: 0.18rem;
+				color: kt-base-color(label, 2);
+			}
+
+			.kt-timeline-v2__item-cricle {
+				border-radius: 50%;
+				border: 0.89rem solid white;
+				z-index: 1;
+				top: 0.2rem;
+				left: 4.12rem;
+				position: relative;
+			
+				>i {
+					font-size: 1.78rem;
+					top: -0.93rem;
+					left: -0.57rem;
+					position: absolute;
+				}
+			}
+
+			.kt-timeline-v2__item-text {
+				display: table-cell;
+				vertical-align: top;
+				font-size: 1rem;
+				padding: 0.35rem 0 0 5rem;
+				color: kt-base-color(label, 2);
+			
+				&.kt-timeline-v2__item-text--bold {
+					font-size: 1.2rem;
+					font-weight: 500;
+					padding-top: 0.21rem;
+					color: kt-base-color(label, 2);
+				}
+			
+				>span {
+					font-weight: 700;
+				}
+			}
+			
+			.kt-list-pics {
+				display: table-cell;
+				vertical-align: top;
+			}
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

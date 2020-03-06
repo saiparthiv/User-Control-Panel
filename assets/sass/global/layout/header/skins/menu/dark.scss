@@ -1,0 +1,29 @@
+//
+// Header Menu Dark Skin
+//
+
+
+
+// Include global config
+@import "../../../../../config";
+
+// Include layout config
+@import "../../../config";
+
+// Include header config
+@import "../../config";
+
+// Build Desktop Header Menu Skin
+@include kt-menu-hor-build-skin(kt-get($kt-header-config, menu, desktop), dark);
+
+// Build Mobile Header Menu Skin
+@include kt-menu-ver-build-skin(kt-get($kt-header-config, menu, tablet-and-mobile), dark);
+
+@include kt-tablet-and-mobile {
+	.kt-header-menu-wrapper {
+        background-color: kt-get($kt-layout-skins, dark);
+
+    	// Scrollbar
+    	@include kt-perfect-scrollbar-skin(#637099);
+	}
+}

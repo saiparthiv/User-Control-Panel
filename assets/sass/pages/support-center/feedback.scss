@@ -1,0 +1,23 @@
+//
+// Support Center/Faq 3
+// Pages SASS files are compiled into separate css files
+//
+
+
+
+// Global config
+@import "../../config";
+
+// Layout config
+@import "../../global/layout/config.scss";
+
+// Base
+.kt-sc-feedback {
+
+	.kt-sc__bg{
+
+		svg{
+			width: 650px;
+		}
+	}
+}

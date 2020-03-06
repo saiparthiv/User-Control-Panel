@@ -1,0 +1,46 @@
+//
+// User Pics List
+//
+
+
+
+
+.kt-list-pics {
+	> a {
+		margin-right: 0.25rem;
+
+		> img {								 
+			width: 3.36rem;
+			border-radius: 50%;
+
+			@include kt-rounded {
+				border-radius: 3px;
+			}
+		}			
+	}
+	
+	&.kt-list-pics--circle {
+		> a {
+			> img {								 
+				width: 3.36rem;
+				border-radius: 50%;
+			}
+		}
+	}
+
+	&.kt-list-pics--sm {
+		> a {
+			> img {					
+				width: 2.14rem;					
+			}
+		}
+	}
+
+	&.kt-list-pics-rounded--sm {
+		> a {
+			> img {					
+				width: 2.14rem;				
+			}
+		}
+	}		
+}

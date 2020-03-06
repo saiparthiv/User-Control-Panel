@@ -1,0 +1,245 @@
+//
+// Page - User Login 1
+// Pages SASS files are compiled into separate css files
+//
+
+
+
+// Global config
+@import "../../config";
+
+// Layout config
+@import "../../global/layout/config.scss";
+
+// Login Base
+.kt-login.kt-login--v1 {
+    // Aside
+    .kt-login__aside {
+        width: 605px;
+        padding: 3rem 3.5rem;
+        background-repeat: no-repeat;
+        background-size: cover;
+
+        .kt-login__logo {
+            display: flex;
+        }
+
+        .kt-login__title {
+            color: #ffffff;
+            font-size: 2rem;
+            font-weight: 500;
+        }
+
+        .kt-login__subtitle {
+            font-size: 1.2rem;
+            font-weight: 200;
+            margin: 2.5rem 0 3.5rem 0;
+            color: rgba(#fff, 0.7);
+        }
+
+        .kt-login__info {
+            display: flex;
+            justify-content: space-between;
+
+            .kt-login__menu {
+                > a {
+                    text-decoration: none;
+                    color: #fff;
+                    margin-right: 2rem;
+                    display: inline-block;
+
+                    @include kt-link-color(rgba(#fff, 0.7), #fff);
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+
+            .kt-login__copyright {
+                color: rgba(#fff, 0.4);
+            }
+        }
+    }
+
+    // Wrapper
+    .kt-login__wrapper {
+        padding: 3rem 3rem;
+        background: #fff;
+
+        // Head
+        .kt-login__head {
+            font-size: 1rem;
+            font-weight: 500;
+            text-align: right;
+
+            .kt-login__signup-label {
+                color: kt-base-color(label, 2);
+            }
+
+            .kt-login__signup-link {
+                color: kt-brand-color();
+            }
+        }
+
+        // Body
+        .kt-login__body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+
+            // Form Wrapper
+            .kt-login__form {
+                width: 100%;
+                max-width: 450px;
+
+                .kt-login__title {
+                    display: block;
+                    text-align: center;
+                    margin-bottom: 5rem;
+                    text-decoration: none;
+
+                    > h3 {
+                        font-size: 2rem;
+                        color: #67666e;
+                    }
+                }
+
+                // Form
+                .kt-form {
+                    margin: 4rem auto;
+
+                    .form-group {
+                        margin: 0;
+                        padding: 0;
+                        margin: 0 auto;
+
+                        .form-control {
+                            border: none;
+                            height: 50px;
+                            margin-top: 1.25rem;
+                            background-color: rgba(#f7f7f9, 0.7);
+                            padding-left: 1.25rem;
+                            padding-right: 1.25rem;
+                            transition: background-color 0.3s ease;
+
+                            &:focus {
+                                transition: background-color 0.3s ease;
+                                background-color: #f7f7f9;
+                            }
+                        }
+                    }
+                }
+
+                // Action
+                .kt-login__actions {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    margin: 3rem 0;
+
+                    .kt-login__link-forgot {
+                        font-weight: 400;
+                        @include kt-link-color(kt-base-color(label, 2), kt-brand-color());
+                    }
+
+                    .kt-login__btn-secondary,
+                    .kt-login__btn-primary {
+                        font-weight: 500;
+                        font-size: 1rem;
+                        height: 50px;
+                        padding-left: 2.75rem;
+                        padding-right: 2.75rem;
+                    }
+                }
+
+                // Divider
+                .kt-login__divider {
+                    margin: 1rem 0 2rem 0;
+
+                    &:not(:first-child):not(:last-child) {
+                        font-weight: 400;
+                        color: #b5b2c3;
+                        font-size: 1rem;
+                    }
+                }
+
+                // Options
+                .kt-login__options {
+                    display: flex;
+                    justify-content: center;
+                    justify-content: space-between;
+                    max-width: 100%;
+
+                    > a {
+                        text-decoration: none;
+                        flex: 1;
+                        justify-content: center;
+                        align-items: center;
+                        display: flex;
+
+                        &:not(:last-child) {
+                            margin: 0 1.5rem 0 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    @include kt-desktop {
+        // Aside
+        .kt-login__aside {
+            flex: 1;
+        }
+    }
+
+    @include kt-tablet-and-mobile() {
+        // Aside
+        .kt-login__aside {
+            width: 100%;
+            height: auto;
+            padding: 2rem 1.5rem;
+
+            .kt-login__logo {
+                margin-bottom: 2.5rem;
+            }
+
+            .kt-login__info {
+                margin-top: 2rem;
+            }
+
+            .kt-login__subtitle {
+                margin: 2rem 0;
+            }
+        }
+
+        // Wrapper
+        .kt-login__wrapper {
+            padding: 3rem 1.5rem;
+
+            .kt-login__head {
+                padding-left: 2rem;
+                right: 2rem;
+            }
+
+            .kt-login__body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin-top: 5rem;
+
+                .kt-login__form {
+                    .kt-login__options {
+                        > a {
+                            &:not(:first-child):not(:last-child) {
+                                margin: 0 0.8rem;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

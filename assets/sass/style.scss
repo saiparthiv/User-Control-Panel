@@ -1,0 +1,48 @@
+//
+// Main Stylesheet
+//
+
+
+
+
+////////////////////////////////////////////////////////////////
+///////////// DO NOT MODIFY BELOW INCLUDE ORDER ////////////////
+////////////////////////////////////////////////////////////////
+
+// 1: Include global config
+@import "config";
+
+// 2: Bootstrap framework includes
+@import "global/integration/frameworks/bootstrap/variables";
+@import "../../../tools/node_modules/bootstrap/scss/bootstrap";
+@import "global/integration/frameworks/bootstrap/bootstrap.scss";
+
+// 3: Components include
+@import "global/include";
+
+////////////////////////////////////////////////////////////////
+///////////// DO NOT MODIFY ABOVE INCLUDE ORDER ////////////////
+////////////////////////////////////////////////////////////////
+
+// 4: Layout config
+@import "global/layout/config";
+@import "global/layout/header/config";
+@import "global/layout/brand/config";
+@import "global/layout/aside/config";
+@import "global/layout/footer/config";
+
+
+// 5: Layout includes
+@import "global/layout/base/base";
+@import "global/layout/header/header";
+@import "global/layout/header/base-mobile";
+@import "global/layout/header/menu";
+@import "global/layout/header/topbar";
+@import "global/layout/brand/brand";
+@import "global/layout/aside/aside";
+@import "global/layout/content/content";
+@import "global/layout/footer/footer";
+
+// 6:  User defined custom styles includes
+@import "custom/example-1";
+@import "custom/example-2";

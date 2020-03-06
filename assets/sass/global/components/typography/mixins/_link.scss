@@ -1,0 +1,18 @@
+//
+// Link Mixins
+// 
+
+
+
+@mixin kt-link-color($default, $hover) {
+   	color: $default;
+
+    &:hover {
+    	color: $hover;
+
+    	&:after {
+    		border-bottom: 1px solid $hover; 
+    		opacity: 0.3;
+    	} 
+    }    
+}

@@ -1,0 +1,87 @@
+//
+// Aside Dark Skin
+//
+
+
+
+// Include global config
+@import "../../../../config";
+
+// Include layout config
+@import "../../config";
+
+// Include header config
+@import "../../header/config";
+
+// Include aside config
+@import "../../aside/config";
+
+// Build Aside Skin
+.kt-aside {
+	background-color: kt-get($kt-layout-skins, dark);
+
+	// Scrollbar
+	@include kt-perfect-scrollbar-skin(#637099);
+
+	// Footer
+	.kt-aside__footer {
+		background-color: #1f2231;
+
+		.btn {
+			@include kt-transition();
+			background-color: transparent;
+
+			i {
+				@include kt-transition();
+				color: #364b8b;
+			}
+		}
+
+		.show .btn,
+		.btn:hover {
+			@include kt-transition();
+			background-color: #191b27;
+
+			i {
+				@include kt-transition();
+				color: kt-brand-color();
+			}
+		}
+	}
+}
+
+// Build Aside Menu Skin
+@include kt-menu-ver-build-skin(kt-get($kt-aside-config, menu), dark);
+
+// Aside close button
+.kt-aside-close {
+	background-color: rgba(#fff, 0.2);
+
+	i {
+		color: rgba(#fff, 0.7);
+	}
+
+	&:hover {
+		background-color: kt-brand-color();
+
+		i {
+			color: kt-brand-color(inverse);
+		}
+	}
+}
+
+// Modify icon color for flaticon2 icons
+.kt-aside {
+	.kt-aside-menu {
+		> .kt-menu__nav {
+			.kt-menu__item {
+				> .kt-menu__link:not(.kt-menu__link--active):not(.kt-menu__link--here):not(.kt-menu__link--hover) {
+					[class^="flaticon2-"],
+					[class*=" flaticon2-"] {
+						color: #434d6b;
+					}
+				}
+			}
+		}
+	}
+}

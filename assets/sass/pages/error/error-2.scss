@@ -1,0 +1,49 @@
+//
+// Page - Error 2
+// Pages SASS files are compiled into separate css files
+//
+
+
+
+// Global config
+@import "../../config";
+
+// Layout config
+@import "../../global/layout/config.scss";
+
+.kt-error-v2 {
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+
+    .kt-error_container {
+        .kt-error_title2 {
+
+            > h1 {
+                font-size: 6rem;
+                text-align: center;
+                margin-top: 45rem;
+                font-weight: 500;
+            }
+        }
+
+        .kt-error_desc {
+            font-size: 2.5rem;
+            text-align: center;
+            display: block;
+            font-weight: 700;
+        }
+    }
+}
+
+@include kt-mobile() {
+    .kt-error-v2 {
+        .kt-error_container {
+            .kt-error_desc {
+                padding-left: 0.6rem;
+                padding-right: 0.6rem;
+            }
+        }
+    }
+}

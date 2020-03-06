@@ -1,0 +1,77 @@
+//
+// User Profile Card
+//
+
+
+
+
+
+.kt-card-profile {
+    padding: 5px 0;
+    margin: 0;
+
+    .kt-card-profile__pic {
+        text-align: center;
+        padding: 0 5px 0 0;
+        text-align: center;
+
+        .kt-card-profile__pic-wrapper {
+            padding: 8px;
+            display: inline-block;
+            margin: 2rem auto;
+            border-radius: 100%;
+            border: 2px solid kt-base-color(grey, 2);
+        }   
+
+        img {
+            text-align: center;
+            max-width: 130px !important;
+            margin: 0 auto !important;
+            border-radius: 100%;
+        }
+
+        .kt-card-profile__no-photo {
+            height: 130px;
+            width: 130px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            position: relative;
+            border-radius: 100%;
+
+            > span {
+                line-height: 0;
+                font-weight: 700; 
+                font-size: 1.3rem;
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    .kt-card-profile__title {
+        text-align: center;
+        font-size: 1.3rem;
+        font-weight: 500;
+    }
+
+    .kt-card-profile__details {
+        text-align: center;
+        padding: 0 0 0 0;
+
+        .kt-card-profile__name {
+            display: block;
+            padding: 0 0 0 0;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: kt-base-color(label, 3);
+        }
+
+        .kt-card-profile__email {
+            display: inline-block;
+            padding: 6px 0 0 0;
+            font-size: 500;
+            color: kt-base-color(label, 3);
+        }
+    } 
+}

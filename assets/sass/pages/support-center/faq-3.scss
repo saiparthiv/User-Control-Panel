@@ -1,0 +1,95 @@
+//
+// Support Center/Faq 3
+// Pages SASS files are compiled into separate css files
+//
+
+
+
+// Global config
+@import "../../config";
+
+// Layout config
+@import "../../global/layout/config.scss";
+
+
+// Base
+.kt-sc-faq-3 {
+	text-align: center;
+	padding: 3rem 0 0;
+
+	.kt-sc__title{
+		color: kt-base-color(label, 4);
+		font-size: 2.2rem;
+		font-weight: 600;
+		margin-bottom: 1.2rem;
+	}
+
+	.kt-sc__subtitle{
+		font-size: 1.4rem;
+		color: #9392a0;
+		margin-bottom: 0.5rem;
+		font-weight: 400;
+	}
+
+	.kt-sc__bg{
+
+		svg{
+			width: 550px;
+			height: auto;
+		}
+	}
+
+	&.kt-negative-spacing{
+		margin-top: -15px;
+		padding-top: 0;
+	}
+
+	&--accordion{
+		padding-top: 0;
+
+		.accordion.accordion-toggle-svg{
+			margin-bottom: 3rem;
+
+			.card{
+				box-shadow: 0px 0px 13px 0px rgba(82, 63, 105, 0.05);
+				border-radius: 4px !important;
+				margin-bottom: 0.9rem;
+
+				.card-header{
+
+					.card-title{
+						padding: 3rem;
+						font-size: 1.45rem;
+
+						svg{
+							width: 30px;
+							height: 30px;
+						}
+					}
+				}
+
+				.card-body{
+					padding: 0 3rem 3rem;
+					border: none;
+					text-align: left;
+					font-size: 1.15rem;
+					line-height: 2rem;
+					font-weight: 400;
+					color: #9392a0;
+				}
+			}
+		}
+	}
+}
+
+@include kt-tablet-and-mobile(){
+	.kt-sc-faq-3 {
+
+		.kt-sc__bg{
+
+			svg{
+				width: 100%;
+			}
+		}
+	}
+}

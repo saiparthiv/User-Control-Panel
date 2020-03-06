@@ -1,0 +1,50 @@
+//
+// Widget32
+//
+
+
+
+
+.kt-widget__files {  
+  .kt-widget__media {
+    text-align: center;
+
+    img {
+      width: 5rem;
+    }
+
+    g [fill] {
+        fill: rgba(40, 42, 60, 0.2);
+    }
+
+    .kt-widget__icon {
+      height: 5rem;
+      display: block;
+      text-align: center;
+
+      svg {
+          width: 4rem;
+          height: 4rem;
+      }
+    }
+  }
+
+  .kt-widget__desc {
+    text-align: center;
+    display: block;
+    font-weight: 500;
+    color: kt-base-color(label, 3);
+    font-size: 1.2rem;
+    padding-top: 5rem;
+
+    &:hover {
+      color: kt-brand-color();
+      transition: all 0.3s ease;
+    }
+
+    &.kt-widget__desc--m {
+      padding-top: 1rem;
+      margin-bottom: 4rem;
+    }
+  }
+}

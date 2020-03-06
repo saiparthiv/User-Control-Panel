@@ -1,0 +1,119 @@
+
+//
+// Widget5
+//
+
+
+
+
+.kt-widget5 {
+    .kt-widget5__item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom:1.5rem;
+        padding-bottom: 1.5rem;
+
+        .kt-widget5__content {
+            display: flex; 
+            align-items: center;
+
+            .kt-widget5__pic {
+                padding-right: 1.25rem;
+
+                img {
+                    max-width: 8.5rem;
+
+                    @include kt-rounded {
+                        border-radius: $kt-border-radius;
+                    }
+                }                    
+            }
+
+            .kt-widget5__title {
+                font-size: 1.1rem;
+                font-weight: 500;
+                color: kt-base-color(label, 3);
+                transition: color 0.3s ease;
+
+                &:hover {
+                    color: kt-brand-color();
+                    transition: color 0.3s ease;
+                }
+            }
+
+            .kt-widget5__desc {
+                margin: 0;
+                padding: 0.4rem 0;
+                font-size: 1rem;
+                font-weight: 400;
+                color: kt-base-color(label, 2);
+            }
+
+            .kt-widget5__info {
+                span:nth-child(even) {
+                    font-weight: 500; 
+                    margin-right: 0.71rem;  
+                }
+            }
+
+            .kt-widget5__stats {
+                display: flex;
+                flex-direction: column;
+
+                .kt-widget5__number {
+                    font-size: 1.3rem;
+                    font-weight: 500;
+                    color: kt-base-color(label, 3);
+                }  
+
+                &:first-child {
+                    padding-right: 3rem;
+                }                    
+            }
+
+            &:last-child {
+                flex-grow: 1;                 
+                text-align: right;
+                justify-content: flex-end;
+                padding-left: 1rem;
+            }
+        } 
+
+        border-bottom: 0.07rem dashed kt-base-color(grey, 2);
+
+        &:last-child {
+            border-bottom: 0;
+        }        
+    }                
+} 
+
+
+@include kt-tablet-and-mobile {
+    .kt-widget5 {
+        padding: 1rem;  
+
+        .kt-widget5__item {
+            .kt-widget5__content {
+                .kt-widget5__pic {
+                   padding-right: 0.5rem; 
+
+                   img {
+                        max-width: 4rem;
+                   }
+                }
+
+                .kt-widget5__stats {
+                    .kt-widget5__number {
+                        font-size: 1.2rem;
+                        font-weight: 500;                        
+                    }                   
+
+                    &:first-child {
+                        padding-right: 1rem;
+                    }                    
+                }
+            }
+        }
+    }        
+}

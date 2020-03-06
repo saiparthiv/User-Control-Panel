@@ -1,0 +1,81 @@
+//
+// Sticky Toolbar
+//
+
+
+
+.kt-sticky-toolbar {
+    width: 46px;
+    position: fixed;
+    top: 30%;
+    right: 0;
+    list-style: none;
+    padding: 5px 0;
+    margin: 0;
+    z-index: 50;
+    background: #fff;
+    box-shadow: $kt-dropdown-shadow;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+    @include kt-rounded {
+        border-radius: 3px 0 0 3px;
+    }
+
+    .kt-sticky-toolbar__item {
+        margin:0;
+        padding: 5px;
+        text-align: center; 
+
+        > a {      
+            background: #f4f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+
+            @include kt-rounded {
+                border-radius: 3px;
+            }
+
+            transition: background 0.3s ease;
+            
+            > i {
+                transition: color 0.3s ease;
+                font-size: 1.3rem;
+            }          
+
+            &:hover {
+                transition: background 0.3s ease;
+
+                > i {
+                    transition: color 0.3s ease;
+                }
+            }
+        }
+
+        @each $name, $color in $kt-state-colors {
+            &.kt-sticky-toolbar__item--#{$name} {
+                > a {   
+                    > i {
+                        color: kt-get($color, base);
+                    }
+                }
+    
+                &:hover {
+                    > a {
+                        background: kt-get($color, base);
+    
+                        > i {                        
+                            color: kt-get($color, inverse);
+                        }
+                    }
+                }
+            }            
+        }
+    }
+}

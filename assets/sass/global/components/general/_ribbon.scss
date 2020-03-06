@@ -1,0 +1,244 @@
+//
+// Ribbon
+//
+
+
+
+.kt-ribbon {
+	position: relative;
+
+	.kt-ribbon__target {
+		display: flex;
+  		justify-content: center;
+		align-items: center;
+		padding: 5px 10px;
+		position: absolute;
+		z-index: 1;
+		background-color: kt-state-color(brand, base);
+		color: kt-state-color(brand, inverse);
+		
+		>.kt-ribbon__inner {
+			z-index: -1;
+			position: absolute;
+			padding:0;
+			width: 100%;
+		    height: 100%;
+		    top: 0;
+		    left: 0;
+		}
+		
+		&:after{
+			border-color: darken(kt-state-color(brand, base), 30%);
+		}
+	}
+
+	&--ver {
+		.kt-ribbon__target{
+			padding: 5px 10px;
+			width: 36px;
+			height: 46px;
+			text-align: center;
+		}		
+	}
+
+	// Styles
+	&--shadow {
+		.kt-ribbon__target{
+			box-shadow: 2px 2px 7px rgba(0, 0, 0, 0.4);
+		}	
+	}
+
+	&.kt-ribbon--round {
+		&.kt-ribbon--top {
+			.kt-ribbon__target {
+				border-top-right-radius: $kt-border-radius; 
+				border-top-left-radius: $kt-border-radius;
+			}
+		}
+		
+		&.kt-ribbon--bottom {
+			.kt-ribbon__target {
+				border-bottom-right-radius: $kt-border-radius;
+				border-bottom-left-radius: $kt-border-radius;
+			}
+		}
+
+		&.kt-ribbon--left {
+			.kt-ribbon__target {
+				border-top-left-radius: $kt-border-radius;
+				border-bottom-left-radius: $kt-border-radius;
+			}
+		}
+		
+		&.kt-ribbon--right {
+			.kt-ribbon__target {
+				border-top-right-radius: $kt-border-radius;
+				border-bottom-right-radius: $kt-border-radius;
+			}
+		}
+	}
+
+	&--border-ver {
+		.kt-ribbon__target{
+			&:after {
+				border-top:none;
+				border-bottom:none;
+				border-left:1px solid;
+				border-right:1px solid;
+				content:'';
+				position: absolute;
+				top:0;
+				bottom:0;
+				left:5px;
+				right:5px;
+			}
+		}		
+	}
+	
+	&--border-hor {
+		.kt-ribbon__target{
+			&:after {
+				border-top:1px solid;
+				border-bottom:1px solid;
+				border-left:none;
+				border-right:none;
+				content:'';
+				position: absolute;
+				top:5px;
+				bottom:5px;
+				left:0;
+				right:0;
+			}
+		}		
+	}
+
+	&--border-dash-ver {
+		.kt-ribbon__target{
+			&:after{
+				border-top:none;
+				border-bottom:none;
+				border-left:1px solid;
+				border-right:1px solid;
+				border-left-style: dashed;
+				border-right-style: dashed;
+				content:'';
+				position: absolute;
+				top:0;
+				bottom:0;
+				left:5px;
+				right:5px;
+			}
+		}		
+	}
+	
+	&--border-dash-hor {
+		.kt-ribbon__target{
+			&:after{
+				border-top:1px solid;
+				border-bottom:1px solid;
+				border-left:none;
+				border-right:none;
+				border-top-style: dashed;
+				border-bottom-style: dashed;
+				content:'';
+				position: absolute;
+				top:5px;
+				bottom:5px;
+				left:0;
+				right:0;
+			}
+		}		
+	}
+
+	&--clip {	
+		&.kt-ribbon--left {
+			.kt-ribbon__target {
+				left: -10px;
+				
+				.kt-ribbon__inner {
+					&:before,
+					&:after {
+						content: '';
+						position: absolute;
+						border-style: solid;
+						border-color: transparent !important;
+						bottom: -10px;
+					}
+
+					&:before {
+						border-width: 0 10px 10px 0;
+						border-right-color: #222 !important;
+						left: 0;
+					}
+				}
+			}
+		}
+
+		&.kt-ribbon--right {
+			.kt-ribbon__target {
+				right: -10px;
+				
+				.kt-ribbon__inner {
+					&:before,
+					&:after {
+						content: '';
+						position: absolute;
+						border-style: solid;
+						border-color: transparent !important;
+						bottom: -10px;
+					}
+
+					&:before {
+						border-width: 0 0 10px 10px;
+						border-left-color: #222 !important;
+						right: 0;
+					}
+				}
+			}
+		}
+	}
+
+	&--flag {
+		.kt-ribbon__target {
+			>.kt-ribbon__inner {				
+				&:after {
+					border-left: 18px solid;
+					border-right: 18px solid;
+					border-bottom: 1em solid transparent !important;
+					bottom:-1em;
+					content:'';
+					height: 0;
+					left:0;
+					position:absolute;
+					width: 0;
+				}
+			}
+		}
+	}
+
+	// State colors
+	@each $name, $color in $kt-state-colors{
+		&--#{$name} {
+			.kt-ribbon__target {
+				background-color: kt-state-color(#{$name}, base);
+				color: kt-state-color(#{$name}, inverse);
+	
+				&:after{
+					border-color: rgba(kt-state-color(#{$name}, inverse), 0.5);
+				}
+
+				>.kt-ribbon__inner{
+					background-color: kt-state-color(#{$name}, base);
+					color: kt-state-color(#{$name}, inverse);
+		
+					&:after {
+						border-color: transparent;
+						border-left-color: kt-state-color(#{$name}, base);
+						border-right-color: kt-state-color(#{$name}, base);
+					}
+				}
+			}			
+		}
+	}
+}
+

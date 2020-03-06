@@ -1,0 +1,268 @@
+//
+// User Login v2
+// Pages SASS files are compiled into separate css files
+//
+
+
+
+// Global config
+@import "../../config";
+
+// Layout config
+@import "../../global/layout/config.scss";
+
+// Login Base
+.kt-login.kt-login--v2 {
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    // Login Area
+    .kt-login__wrapper {
+        padding: 6% 2rem 1rem 2rem;
+        margin: 0 auto 2rem auto;
+        overflow: hidden;
+
+        .kt-login__container {
+            width: 430px;
+            margin: 0 auto;
+
+            .kt-login__logo {
+                text-align: center;
+                margin: 0 auto 4rem auto;
+            }
+
+            .kt-login__head {
+                margin-top: 1rem;
+
+                .kt-login__title {
+                    text-align: center;
+                    font-size: 1.5rem;
+                    font-weight: 500;
+                    color: #fff;
+                }
+
+                .kt-login__desc {
+                    margin-top: 1.5rem;
+                    text-align: center;
+                    font-size: 1.1rem;
+                    font-weight: 400;
+                    color: rgba(#fff, 0.8);
+                }
+            }
+
+            .kt-form {
+                margin: 4rem auto;
+
+                .input-group {
+                    padding: 0;
+                    margin: 0 auto;
+                }
+
+                .form-control {
+                    height: 46px;
+                    border-radius: 46px;
+                    border: none;
+                    padding-left: 1.5rem;
+                    padding-right: 1.5rem;
+                    margin-top: 1.5rem;
+                    background: rgba(#4322A7, 0.4);
+                    color: #fff;
+                    @include kt-input-placeholder(rgba(#fff, 0.7));
+                }
+
+                .form-control.is-valid + .valid-feedback,
+                .form-control.is-invalid + .invalid-feedback {
+                    font-weight: 500;
+                    font-size: 0.9rem;
+                    padding-left: 1.6rem;
+                }
+
+                .kt-login__extra {
+                    padding-left: 7px;
+                    padding-right: 7px;
+                    margin: 15px auto;
+                    color: rgba(#fff, 0.6);
+                    font-size: 1rem;
+
+                    .kt-checkbox {
+                        font-size: 1rem;
+
+                        > span {
+                            border: 1px solid rgba(#fff, 0.6);
+                        }
+
+                        input:checked ~ span {
+                            border: 1px solid #fff;
+
+                            &:after {
+                                border: solid #fff;
+                            }
+                        }
+                    }
+
+                    .kt-login__link {
+                        font-size: 1rem;
+                        color: rgba(#fff, 0.6);
+
+                        &:hover {
+                            color: #fff;
+                        }
+                    }
+                }
+
+                .kt-login__actions {
+                    text-align: center;
+                    margin-top: 7%;
+
+                    .kt-login__btn-primary,
+                    .kt-login__btn-secondary {
+                        height: 46px;
+                        display: inline-block;
+                        text-align: center;
+                        padding-left: 4rem;
+                        padding-right: 4rem;
+                        margin-top: 0.8rem;
+                        border-radius: 60px;
+                        background: transparent;
+                        color: rgba(#fff, 0.8);
+                        border-color: rgba(#fff, 0.4);
+
+                        &.active,
+                        &:active,
+                        &:hover {
+                            color: #fff;
+                            border-color:#fff;
+                        }
+                    }
+
+                    .kt-login__btn-secondary {
+                        color: rgba(#fff, 0.4);
+                        border-color: rgba(#fff, 0.3);
+
+                        &.active,
+                        &:active,
+                        &:hover {
+                            color: #fff;
+                            border-color:#fff;
+                        }
+                    }
+                }
+            }
+
+            .kt-login__account {
+                text-align: center;
+                margin-top: 2rem;
+
+                .kt-login__account-msg {
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                    color: #bbabf1;
+                }
+
+                .kt-login__account-link {
+                    font-size: 1.1rem;
+                    font-weight: 500;
+                }
+            }
+        }
+    }
+}
+
+// Login Modes
+.kt-login.kt-login--v2{
+    &.kt-login--signin {
+        .kt-login__signup {
+            display: none;
+        }
+
+        .kt-login__signin {
+            display: block;
+        }
+
+        .kt-login__forgot {
+            display: none;
+        }
+    }
+
+    &.kt-login--signup {
+        .kt-login__signup {
+            display: block;
+        }
+
+        .kt-login__signin {
+            display: none;
+        }
+
+        .kt-login__forgot {
+            display: none;
+        }
+
+        .kt-login__account {
+            display: none;
+        }
+    }
+
+    &.kt-login--forgot {
+        .kt-login__signup {
+            display: none;
+        }
+
+        .kt-login__signin {
+            display: none;
+        }
+
+        .kt-login__forgot {
+            display: block;
+        }
+    }
+}
+
+@include kt-tablet-and-mobile {
+    .kt-login.kt-login--v2 {
+        .kt-login__wrapper {
+            padding-top: 5rem;
+            width: 100%;
+
+             .kt-login__container {
+                margin: 0 auto;
+
+                .kt-login__account {
+                    margin-top: 10rem;
+                }
+            }
+        }
+    }
+}
+
+@include kt-mobile() {
+    .kt-login.kt-login--v2{
+        .kt-login__wrapper {
+            width: 100%;
+
+            .kt-login__container {
+                width: 100%;
+                max-width: 400px;
+                margin: 0 auto;
+
+                .kt-form {
+                    width: 100%;
+                    margin: 0 auto;
+
+                    .form-control {
+                        background: rgba(#4322A7, 0.8);
+                    }
+                }
+
+                .kt-login__actions {
+                    .kt-login__btn-submit {
+                        padding: 0.8rem 3rem;
+                    }
+                }
+
+                .kt-login__account {
+                    margin-top: 1.5rem;
+                }
+            }
+        }
+    }
+}

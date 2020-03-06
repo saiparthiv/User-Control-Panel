@@ -1,0 +1,134 @@
+//
+// Widget30
+//
+
+
+
+
+.kt-widget30 {
+    margin: 1.5rem 0;
+
+    .kt-widget30__head {
+        padding: 0;
+        max-width: 100%;
+        margin: 0 auto 2rem auto;  
+
+        .owl-carousel {                
+            .carousel {
+                cursor: pointer;                       
+                text-align: center; 
+                padding: 1rem 0;
+                margin: 1rem 1rem;
+                box-shadow: 0px 2px 14px 2px rgba(#000, 0.04); 
+                
+                @include kt-rounded {
+                    border-radius: $kt-border-radius;
+                }                     
+
+                > span {
+                    display: block;
+
+                    &:first-child {
+                        font-size: 1.1rem;
+                        font-weight: 500; 
+                        color: kt-base-color(label, 3);
+                    } 
+
+                    &:last-child {       
+                        font-size: 0.9rem;                                                
+                        font-weight: 400;
+                        color: kt-base-color(label, 2);
+                    } 
+                }                                      
+            }
+
+            .center > div {
+                cursor: auto;  
+                background-color: kt-brand-color();
+                box-shadow: 0px 2px 14px 2px rgba(kt-brand-color(), 0.2);
+
+                > span {
+                    &:first-child {
+                        color: kt-brand-color(inverse);
+                    } 
+
+                    &:last-child {
+                        color: rgba(kt-brand-color(inverse), 0.7);
+                    }   
+                }                            
+            }  
+        }
+    }
+
+    .kt-widget30__body {
+        .owl-carousel {
+            .kt-widget30__items {
+                padding: 0 2.2rem;
+                border-bottom: 1px dashed kt-base-color(grey, 2);
+
+                .kt-widget30__item {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;    
+                    margin-bottom: 1.5rem;
+                    padding-bottom: 1.5rem;  
+
+                    .kt-widget30__pic {
+                        > img {
+                            width: 3rem;
+                            height: 3rem;
+                            border-radius: 100%;                                   
+                        }
+                    }                              
+
+                    .kt-widget30__info {
+                        width: 100%;                                
+                        text-align: left; 
+                        padding: 0 1rem; 
+                        font-weight: 500; 
+                        color: kt-base-color(label, 2);
+                        
+                        > a {
+                            display: block;
+                            font-size: 1rem;
+                            font-weight: 500;
+                            color: kt-base-color(label, 3);
+                            transition: color 0.3s ease;
+
+                            &:hover {
+                                color: kt-brand-color();
+                                transition: color 0.3s ease;
+                            }
+                        } 
+
+                        > span {
+                            display: block;
+                            font-size: 1rem;
+                            font-weight: 400;
+                            color: kt-base-color(label, 2);
+                        }                                                                                              
+                    }  
+
+                    .kt-widget30__stats {
+                        
+                    }                          
+
+                    &:last-child {
+                        border-bottom: none;
+                    }
+                }
+
+                &:last-child {
+                    border-bottom: none;
+                }
+            }
+        }
+    }                	 	 
+}	 
+ 
+@include kt-tablet-and-mobile {
+    .kt-widget30 {
+        margin: 1rem 0;
+    }
+}
+ 

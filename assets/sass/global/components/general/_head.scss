@@ -1,0 +1,120 @@
+//
+// Head
+//
+
+
+
+$kt-head-skin-light-bg-color: #f9fafe;
+
+.kt-head {
+	padding: 2.5rem 1rem;
+	margin: 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+
+    // Modifiers
+    &.kt-head--space-sm {
+        padding: 1.5rem 1rem;
+    }
+
+    &.kt-head--space-lg {
+        padding: 3rem 1rem;
+    }
+
+    &.kt-head--fit-x {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    &.kt-head--fit-b {
+        padding-bottom: 0 !important;
+    }
+
+    &.kt-head--fit-t {
+        padding-top: 0 !important;
+    }
+
+    &.kt-head--space-bottom-sm {
+        padding-bottom: 1rem;
+    }
+
+    // Elements
+    .kt-head__title {
+        font-size: 1.3rem;
+        font-weight: 500;
+        text-align: center;
+        margin: 0;
+    }
+
+    .kt-head__sub {
+    	margin-top: 0.5rem;
+    	font-size: 1rem;
+        font-weight: 400;
+        text-align: center;
+    }
+
+    // Skins
+    &.kt-head--skin-dark {
+    	.kt-head__title {
+    		color: #fff;
+    	}
+
+    	.kt-head__sub {
+    		color: darken(#fff, 6%);
+    	}
+
+        .nav.nav-tabs-line {
+            border-bottom-color: rgba(#fff, 0.3) !important;
+
+            .nav-item {
+                .nav-link {
+                    color: rgba(#fff, 0.5);
+
+                    > i {
+                        color: rgba(#fff, 0.4);
+                    }
+
+                    &:hover,
+                    &.active {
+                        color: #fff;
+
+                        > i {
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+        }
+    }	
+
+    &.kt-head--skin-light {
+        background-color: $kt-head-skin-light-bg-color;
+
+    	.kt-head__title {
+    		color: kt-base-color(label, 3);
+    	}
+
+    	.kt-head__sub {
+    		color: kt-base-color(label, 2);
+    	}
+    }
+
+    // Tabs
+    .nav {
+        margin: 1rem 0 0 0;
+    }
+}
+
+.dropdown-menu:not(.dropdown-menu-top-unround) {
+    .kt-head {
+        @include kt-rounded {
+            border-top-left-radius: $kt-border-radius;
+            border-top-right-radius: $kt-border-radius;
+        }
+    }
+}
+
+// Util classes
+.kt-head-skin-light-bg-color {
+    background-color: $kt-head-skin-light-bg-color;
+}

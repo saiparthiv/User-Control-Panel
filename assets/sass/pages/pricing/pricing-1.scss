@@ -1,0 +1,211 @@
+//
+// Pricing Tables 1
+// Pages SASS files are compiled into separate css files
+//
+
+
+
+// Global config
+@import "../../config";
+
+// Layout config
+@import "../../global/layout/config.scss";
+
+.kt-pricing-1 {
+	overflow: hidden;
+
+	&.kt-pricing-1--fixed {
+		width: 75%;
+		margin: 0 auto;
+	}
+
+	.kt-pricing-1__items {
+		background-color: #fff;
+		position: relative;
+		z-index: 1;
+		text-align: center;
+		padding: 2.14rem 0 2.14rem 0;
+
+		.kt-pricing-1__item {
+			border-right: 0.07rem solid kt-base-color(grey, 2);
+			padding: 0;
+
+			&:last-child {
+				border-right: none;
+			}
+
+			.kt-pricing-1__visual {
+				margin-top: 10rem;
+				position: relative;
+				left: 50%;
+    			transform: translateX(-50%) translateY(-50%);
+
+				.kt-pricing-1__hexagon1 {
+					left: 50%;
+    				transform: translateX(-50%) translateY(-50%);
+					position: absolute;
+
+					&:before {
+						left: 50%;
+    					transform: translateX(-50%) translateY(-50%);
+						content: "";
+						position: absolute;
+						top: -3.93rem;
+						width: 17.14rem;
+						height: 0;
+						border-left: 4.2rem solid transparent;
+						border-right: 4.2rem solid transparent;
+						border-bottom: 7.5rem solid #FCFCFE;
+					}
+
+					&:after {
+						left: 50%;
+    					transform: translateX(-50%) translateY(-50%);
+						content: "";
+						position: absolute;
+						top: 3.5rem;
+						width: 17.14rem;
+						height: 0;
+						border-left: 4.2rem solid transparent;
+						border-right: 4.2rem solid transparent;
+						border-top: 7.5rem solid #FCFCFE;
+					}
+				}
+
+				.kt-pricing-1__hexagon2 {
+					left: 50%;
+					margin-top: -1.43rem;
+    				transform: translateX(-50%) translateY(-50%);
+					position: absolute;
+
+					&:before {
+						left: 50%;
+    					transform: translateX(-50%) translateY(-50%);
+						content: "";
+						position: absolute;
+						top: -0.42rem;
+						width: 8.7rem;
+						height: 0;
+						border-left: 2.14rem solid transparent;
+						border-right: 2.14rem solid transparent;
+						border-bottom: 3.71rem solid #F8F7FD;
+					}
+
+					&:after {
+						left: 50%;
+    					transform: translateX(-50%) translateY(-50%);
+						content: "";
+						position: absolute;
+						top: 3.3rem;
+						width: 8.7rem;
+						height: 0;
+						border-left: 2.14rem solid transparent;
+						border-right: 2.14rem solid transparent;
+						border-top: 3.71rem solid #F8F7FD;
+					}
+				}
+
+				.kt-pricing-1__icon {
+					left: 50%;
+    				transform: translateX(-50%) translateY(-50%);
+					position: absolute;
+
+					> i {
+						font-size: 8.57rem;
+					}
+				}
+			}
+
+			.kt-pricing-1__price {
+				font-size: 3rem;
+				font-weight: 700;
+				display: block;
+				margin-top: 20rem;
+				color: kt-base-color(label, 3);
+
+				.kt-pricing-1__label {
+					margin-top: 0.64rem;
+					margin-left: 0.357rem;
+					position: absolute;
+					font-size: 1.64rem;
+					font-weight: 500;
+					color: kt-base-color(label, 2);
+				}
+			}
+
+			&:nth-child(1) {
+				.kt-pricing-1__price {
+					font-size: 2.14rem;
+					margin-bottom: 0.571rem;
+					margin-top: 270px;
+					color: kt-base-color(label, 3);
+				}
+			}
+
+			.kt-pricing-1__subtitle {
+				font-size: 1.1rem;
+				color: kt-base-color(label, 1);
+				font-weight: 500;
+			}
+
+			.kt-pricing-1__description {
+				margin: 1.785rem auto;
+				font-size: 1rem;
+				padding: 0 0.5rem;
+				color: kt-base-color(label, 2);
+				font-weight: 400;
+
+				> span {
+					display: block;
+					text-align: center;
+				}
+			}
+
+			.kt-pricing-1__btn {
+				margin: 2.14rem 0 2.14rem 0;
+
+				> .btn {
+					padding: 0.86rem 3.57rem 0.86rem 3.57rem;
+				}
+			}
+		}
+	}
+}
+
+@include  kt-minimal-desktop() {
+	.kt-pricing-1 {
+		&.kt-pricing-1--fixed {
+			width: 100%;
+
+			.kt-pricing-1__items {
+				   .kt-pricing-1__item {
+				    border-right: 1px solid kt-base-color(grey, 2);
+
+				    &:last-child {
+						border-right: none;
+					}
+				}
+			}
+		}
+	}
+}
+
+
+@include kt-tablet-and-mobile() {
+	.kt-pricing-1 {
+		.kt-pricing-1__items {
+			.kt-pricing-1__item {
+			    border-bottom: 1px solid kt-base-color(grey, 2);
+			    border-right: none;
+
+			    &:last-child {
+					border-bottom: none;
+				}
+
+				.kt-pricing-1__btn {
+					margin-bottom: 3.57rem;
+				}
+			}
+	    }
+	}
+}

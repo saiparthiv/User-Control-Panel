@@ -1,0 +1,74 @@
+//
+// Widget 12
+//
+
+
+
+.kt-widget12 {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    .kt-widget12__content {
+        display: flex;           
+        padding-bottom: 1rem;      
+        flex-grow: 1;     
+        display: flex;
+        flex-direction: column;
+
+        .kt-widget12__item {
+            display: flex;        
+            margin-bottom: 2.5rem;
+            align-items: center;
+
+            .kt-widget12__info {
+                flex: 1;   
+
+                .kt-widget12__desc {
+                    font-size: 1rem;
+                    color: kt-base-color(label, 2);
+                    padding-bottom: 0.5rem;
+                    font-weight: 500;
+                    display: block;
+                }              
+
+                .kt-widget12__value {
+                    font-size: 1.4rem;
+                    font-weight: 600;
+                    color: kt-base-color(label, 3);
+                    display: block;
+                }
+
+                .kt-widget12__progress {
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center; 
+                    line-height: 0;
+                    padding-top: 1rem;
+
+                    .progress {
+                        width: 100%;
+                        height: 0.6rem
+                    }
+
+                    .kt-widget12__stat {
+                        font-size: 1.3rem;
+                        font-weight: 700;
+                        color: kt-base-color(label, 2);
+                        padding-left: 1rem;
+                    }
+                }      
+            }        
+        }    
+    }   
+
+    .kt-widget12__chart {
+        position: relative;
+
+        canvas {
+            border-bottom-left-radius: $kt-border-radius;
+            border-bottom-right-radius: $kt-border-radius;
+        }
+    }
+}

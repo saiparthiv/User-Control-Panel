@@ -1,0 +1,62 @@
+//
+// Widget8
+//
+
+
+
+
+.kt-widget8 {
+    
+    // Item
+    .kt-widget8__item {
+        display: flex;             
+          
+
+        .kt-widget8__pic {
+                                               
+
+            > img {
+                width: 3rem;                    
+                border-radius: 50%;
+            }
+        }
+
+        // Info
+        .kt-widget8__info {
+            padding-left: 1rem;                
+            font-size: 1rem;             
+
+            // Username
+            .kt-widget8__username {
+                color: kt-base-color(label, 3);
+                font-size: 1.2rem;
+                font-weight: 500;                      
+            }
+
+            // Description
+            .kt-widget8__desc {
+                font-size: 1rem;  
+                color: kt-base-color(label, 2);
+            }                 
+        }
+
+        // Action
+        .kt-widget8__action {
+                                 
+        }  
+
+        
+        border-bottom: 0.07rem dashed kt-base-color(grey, 2);
+
+        &:last-child {
+            border-bottom: 0;
+        }
+    }  
+
+    &:last-child {
+        margin-bottom: -0.71rem;
+    }             
+} 
+
+
+ 

@@ -1,0 +1,105 @@
+//
+// Header Menu
+//
+
+
+
+
+// Desktop Mode
+@include kt-menu-hor-build-layout(kt-get($kt-header-config, menu, desktop));
+
+// Tablet & Mobile Mode
+@include kt-menu-ver-build-layout(kt-get($kt-header-config, menu, tablet-and-mobile));
+//@include kt-menu-ver-build-skin(kt-get($kt-header-config, menu, tablet-and-mobile), default);
+
+// Header Menu Mobile Offcanvas
+@include kt-offcanvas-build(kt-header-menu-wrapper, tablet-and-mobile, kt-get($kt-header-config, menu, offcanvas-mobile));
+
+@include kt-desktop {
+	.kt-header-menu-wrapper {
+		body:not(.kt-aside--enabled) & {
+			display: flex;
+			flex-direction: row;
+			align-items: stretch;
+
+			.kt-header-logo {
+				padding: 0 kt-get($kt-page-padding, desktop);
+				display: flex;
+				align-items: center;
+				margin-right: 25px;
+			}
+		}
+	}
+
+	.kt-header-menu {
+		.kt-menu__nav {
+			> .kt-menu__item {
+				&:first-child {
+					padding-left: 0;
+				}
+
+				> .kt-menu__submenu {
+					border-top-left-radius: 0;
+					border-top-right-radius: 0;
+				}
+			}
+		}
+
+		// Layouts
+		&.kt-header-menu--layout-default {
+			.kt-menu__nav {
+				> .kt-menu__item {
+					> .kt-menu__link {
+						padding: 0.65rem 1.1rem;
+
+						@include kt-not-rounded {
+							border-radius: 0 !important;
+						}
+					}
+				}
+			}
+		}
+
+		&.kt-header-menu--layout-tab {
+			.kt-menu__nav {
+				> .kt-menu__item {
+					margin: 0 1rem;
+					align-items: stretch;
+
+					> .kt-menu__link {
+						align-items: stretch;
+						background-color: transparent !important;
+						padding: 0 !important;
+						border-bottom: 1px solid transparent;
+						margin-bottom: -1px;
+
+						@include kt-rounded {
+							border-radius: 0 !important;
+						}
+					}
+
+					&:first-child {
+						margin-left: 0 !important;
+					}
+
+					&.kt-menu__item--here,
+					&.kt-menu__item--active {
+						> .kt-menu__link {
+							background-color: transparent !important;
+							border-bottom: 1px solid kt-brand-color() !important;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include kt-tablet-and-mobile {
+	.kt-header-menu-wrapper {
+
+		.kt-header-logo {
+			display: none;
+		}
+	}
+}

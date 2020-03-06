@@ -1,0 +1,74 @@
+//
+// Timeline v3
+//
+
+
+
+
+.kt-timeline-v3 {
+    .kt-timeline-v3__item {
+        display: table;
+        margin-bottom: 1rem;
+        position: relative; // state bar
+
+        &:before {
+            position: absolute;
+            display: block;
+            width: 0.28rem;
+            border-radius: 0.3rem;
+            height: 70%;
+            left: 5.1rem;
+            top: 0.46rem;
+            content: "";
+        }
+        
+        .kt-timeline-v3__item-time {
+            display: table-cell;
+            vertical-align: top;
+            padding-top: 0.6rem;
+            font-weight: 500;
+            font-size: 1.3rem;
+            position: absolute;
+            text-align: right;
+            width: 3.57rem;
+            color: kt-base-color(label, 2);
+        } 
+        
+        // Description
+        .kt-timeline-v3__item-desc {
+            display: table-cell;
+            width: 100%;
+            vertical-align: top;
+            padding-left: 7rem;
+            
+            .kt-timeline-v3__item-text {
+                font-size: 1rem;
+                font-weight: 400;
+                color: kt-base-color(label, 2);
+            }
+            .kt-timeline-v3__item-user-name {
+                .kt-timeline-v3__itek-link {
+                    font-size: 0.9rem;
+                    text-decoration: none;
+                }
+            }
+        } 
+        
+        // States
+        @each $name, $color in $kt-state-colors {
+            &.kt-timeline-v3__item--#{$name} {
+                &:before {
+                    background: kt-get($color, base);
+                }
+            }
+        }
+    }
+}
+
+@include kt-mobile() {
+    .kt-timeline-v3 {
+        .kt-timeline-v3__item {
+            margin-left: 0;
+        }
+    }
+}

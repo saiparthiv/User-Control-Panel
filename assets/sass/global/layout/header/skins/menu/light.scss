@@ -1,0 +1,20 @@
+//
+// Header Menu light Skin
+//
+
+
+
+// Include global config
+@import "../../../../../config";
+
+// Include layout config
+@import "../../../config";
+
+// Include header config
+@import "../../config";
+
+// Build Desktop Header Menu Skin
+@include kt-menu-hor-build-skin(kt-get($kt-header-config, menu, desktop), light);
+
+// Build Mobile Header Menu Skin
+@include kt-menu-ver-build-skin(kt-get($kt-header-config, menu, tablet-and-mobile), light);

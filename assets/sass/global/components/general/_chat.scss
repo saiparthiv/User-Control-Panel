@@ -1,0 +1,223 @@
+//
+// Chat
+//
+
+
+
+.kt-chat {
+    .kt-portlet__head {        
+        align-items: center;
+        flex-grow: 1;
+    }
+    
+    .kt-chat__head {       
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        flex-grow: 1;
+
+        .kt-chat__label {
+            .kt-chat__title {
+                font-size: 1.1rem;
+                color: kt-base-color(label, 4);
+                font-weight: 600;
+                margin: 0;
+                padding: 0;            
+    
+                &:hover {
+                    color: kt-brand-color();
+                    transition: color 0.3s ease;
+                }
+            }
+    
+            .kt-chat__status {
+                color: kt-base-color(label, 2);
+                font-size: 0.9rem;
+                font-weight: 500;
+                display: block;
+            }            
+        }        
+
+        .kt-chat__left {
+            flex-grow: 1;
+            text-align: left;
+        }
+
+        .kt-chat__right {
+            flex-grow: 1;
+            text-align: right;
+        }
+
+        .kt-chat__center {
+            flex-grow: 1;
+            text-align: center;
+        }
+    }
+
+    .kt-chat__messages {
+        .kt-chat__message {
+            margin-bottom: 1rem;
+
+            .kt-chat__user {
+                .kt-chat__username {
+                    padding: 0 0.4rem;
+                    font-size: 1.1rem;
+                    color: kt-base-color(label, 4);
+                    font-weight: 500;
+
+                    &:hover {
+                        color: kt-brand-color();
+                        transition: color 0.3s ease;
+                    }
+                }
+    
+                .kt-chat__datetime {
+                    color: kt-base-color(label, 2);
+                    font-size: 0.9rem;
+                    font-weight: 400;
+                }
+            }
+    
+            .kt-chat__text {
+                display: inline-block;
+                padding: 1.2rem 1.7rem;
+                padding: 1.1rem 3.5rem 1.1rem 1.6rem;
+                margin-top: 0.8rem;                
+                color: #6c7293;
+                font-weight: 500; 
+                font-size: 1.1rem;                               
+    
+                b {
+                    color: kt-base-color(label, 3);
+                    font-weight: 0; 
+                }
+    
+                @include kt-rounded {
+                    border-radius: $kt-border-radius;
+                }    
+            }
+
+            &.kt-chat__message--right {
+                text-align: right;
+    
+                .kt-chat__text {
+                    text-align: right;
+                    padding: 1.1rem 1.6rem 1.1rem 3.5rem;
+                }
+            }            
+        }
+        
+        &.kt-chat__messages--solid {
+            width: 100%;             
+             
+            .kt-chat__message {
+                padding: 1.3rem 1.7rem;
+                margin: 1.5rem 0;                
+                display: inline-block;
+
+                &:first-child {
+                    margin-top: 0;
+                }
+
+                @include kt-rounded {
+                    border-radius: $kt-border-radius;
+                }   
+
+                .kt-chat__text {
+                    padding: 0;
+                    margin-top: 0.5rem; 
+                    background: none !important;                  
+                }
+
+                &.kt-chat__message--right {
+                    float: right;
+                } 
+                
+                @each $name, $color in $kt-state-colors {
+                    &.kt-chat__message--#{$name} {                        
+                        background: rgba(kt-get($color, base), 0.1);                      
+                    }
+                } 
+            }
+        }
+    }
+
+    .kt-chat__input {  
+        .kt-chat__editor {
+            textarea {
+                width: 100%;
+                border: 0 !important;
+                outline: none !important;
+                background-color: transparent !important;
+
+                @include kt-input-placeholder(kt-base-color(label, 1));
+                color: kt-base-color(label, 1);
+            }
+        }      
+        
+        .kt-chat__toolbar {
+            margin-top: 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .kt_chat__tools {
+                a {
+                    i {
+                        margin-right: 1.1rem;                
+                        color: #cdd1e9;
+                        font-size: 1.4rem; 
+
+                        &:hover {
+                            color: kt-brand-color();
+                            transition: color 0.3s ease;
+                        }
+                    }                    
+                }                
+            }
+        }
+    }
+}
+
+@include kt-tablet-and-mobile {
+    .kt-chat {
+        .kt-chat__messages {
+            .kt-chat__message {
+                margin-bottom: 0.75rem;
+
+                .kt-chat__user {
+                    .kt-chat__username {
+                        padding: 0 0.25rem;
+                        font-size: 1rem;
+                    }
+                }
+        
+                .kt-chat__text {
+                    display: inline-block;
+                    padding: 0.75rem 1rem;
+                    margin-top: 0.5rem;
+                }
+
+                &.kt-chat__message--right {
+                    .kt-chat__text {
+                        padding: 0.75rem 1rem;
+                    }
+                }
+            } 
+        }
+
+        .kt-chat__input {              
+            .kt-chat__toolbar {
+                margin-top: 0.75rem;
+                .kt_chat__tools {
+                    a {
+                        i {
+                            margin-right: 0.75rem;
+                            font-size: 1.3rem; 
+                        }                    
+                    }                
+                }
+            }
+        }
+    }
+}

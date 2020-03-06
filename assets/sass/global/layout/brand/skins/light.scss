@@ -1,0 +1,72 @@
+//
+// Brand Light Skin
+//
+
+
+
+// Include global config
+@import "../../../../config";
+
+// Include layout config
+@import "../../config";
+
+// Include header config
+@import "../../header/config";
+
+// Include aside config
+@import "../../aside/config";
+
+// Desktop mode
+@include kt-desktop {
+	.kt-aside__brand {
+	    background-color: kt-get($kt-layout-skins, light);
+    	box-shadow: none;
+
+    	.kt-aside__brand-tools {
+			svg {
+				g {
+					[fill] {
+						fill: kt-brand-color();
+					}
+				}
+			}
+			//@include kt-burger-icon-skin(kt-aside__brand-aside-toggler, (default: lighten(#b4b8ce, 10%), hover: kt-brand-color(), active: kt-brand-color()) );
+		}
+	}
+}
+
+// Tablet and mobile mode
+@include kt-tablet-and-mobile {
+	.kt-header-mobile {
+		background-color: kt-get($kt-layout-skins, light);
+		border-bottom: 1px solid #eff0f6;
+
+		// Minimize
+		.kt-header-mobile--fixed.kt-header--minimize & {
+			border-bottom: 0;
+			box-shadow: 0px 1px 9px -3px rgba(0,0,0,0.1);
+		}
+
+		.kt-header__topbar--mobile-on & {
+			box-shadow: none;
+		}
+
+		// Toolbar
+		.kt-header-mobile__toolbar {
+			@include kt-burger-icon-skin(kt-header-mobile__toggler, (default: #b4b8ce, hover: kt-brand-color(), active: kt-brand-color()) );
+
+			.kt-header-mobile__topbar-toggler {
+				i {
+					color: #b4b8ce;
+				}
+
+				&.kt-header-mobile__topbar-toggler--active,
+				&:hover {
+					i {
+						color: kt-brand-color();
+					}
+				}
+			}
+		}
+	}
+}

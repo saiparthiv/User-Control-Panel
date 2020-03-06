@@ -1,0 +1,182 @@
+//
+// Widget27
+//
+
+
+
+
+.kt-widget27 {
+    @include kt-rounded {
+        border-top-left-radius: $kt-border-radius;
+        border-top-right-radius: $kt-border-radius;
+    }
+
+    .kt-widget27__visual {
+        position: relative;
+
+        @include kt-rounded {
+            border-top-left-radius: $kt-border-radius;
+            border-top-right-radius: $kt-border-radius;
+        }             
+
+        > img {
+            width: 100%;
+            height: 286px;       
+            
+            @include kt-rounded {
+                border-top-left-radius: $kt-border-radius;
+                border-top-right-radius: $kt-border-radius;
+            }
+        }           
+
+        .kt-widget27__title {
+            position: absolute;
+            left: 50%;
+            top: 60%;
+            transform: translate(-50%, -50%);
+            display: block;
+            z-index: 1;
+            color:#ffffff;
+
+            > span {
+                font-size: 4.5rem;
+
+                > span {
+                    font-size: 2.5rem;
+                    padding-right: 0.4rem;
+                }                                    
+            }                
+        }                
+
+        .kt-widget27__btn {
+            .btn {
+                position: absolute;
+                left: 50%;
+                top: 100%;
+                transform: translate(-50%, -50%);                
+                z-index: 1;
+                display: block;
+                padding: 1rem 2.5rem;
+                
+                &:hover,
+                &:focus,
+                &:active {
+                    background-color: #fff;
+                }
+            }
+        }
+    }
+
+    .kt-widget27__container {
+        margin: 3rem 0;
+        width: 100%;
+        padding: 1rem 0.5rem 0 0.5rem;
+
+        @include kt-rounded {
+            border-top-left-radius: $kt-border-radius;
+            border-top-right-radius: $kt-border-radius;
+        } 
+
+        .nav {
+            display: table;
+            width: 100%;
+            table-layout: fixed;
+            border-spacing: 0.7rem;               
+
+            .nav-item {
+                display: table-cell;                                       
+
+                > a {
+                    text-align: center;                       
+                    font-weight: 600;
+                    padding: 0.8rem 0 0.8rem 0;
+                    color: kt-base-color(label, 2);
+                    border: 1px solid kt-base-color(grey, 1);
+
+                    &.active { 
+                        background-color: kt-brand-color();
+                        border-color: kt-brand-color() !important;
+                        color: kt-brand-color(inverse);
+                    } 
+                }                                        
+            }
+        }
+
+        .tab-content {
+            padding: 0 1rem;
+
+            // widget header
+            .kt-widget27__header {
+                padding: 1.1rem 0;
+                margin-bottom: 0.5rem;
+
+                .kt-widget27__title {
+                    font-size: 1.3rem;
+                    font-weight: 500;
+                    margin-bottom: 0;
+                }
+
+                .kt-widget27__desc {
+                    display: inline-block;
+                    margin-top: 0.2rem;
+                }             
+            }
+
+            .kt-widget27__legends {
+                // widget legend
+                .kt-widget27__legend {
+                    margin-bottom: 0.9rem;
+
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+                            
+                    .kt-widget27__stats {
+                        color: kt-base-color(label, 2);
+                        display: inline-block;
+                        font-weight: 500;                     
+                    }  
+
+                    .kt-widget27__bullet {
+                        width: 1.5rem;
+                        height: 0.45rem;
+                        display: inline-block;
+                        border-radius: 1.1rem; 
+                        margin: 0 1rem 0.1rem 0;                                               
+                    }                 
+                }
+            }   
+
+            .kt-widget27__chart {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 110px;
+                flex: 1;
+
+                .kt-widget27__stat {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    position: absolute;
+                    left: 0;
+                    right: 0;
+                    bottom: 0;
+                    top: 0;
+                    font-size: 2.2rem;
+                    font-weight: 500;
+                    color: kt-base-color(label, 2);
+                } 
+
+                canvas {
+                    position: relative;
+                    z-index: 1;
+                } 
+            }               
+        }
+    }     
+} 
+ 
+
+ 

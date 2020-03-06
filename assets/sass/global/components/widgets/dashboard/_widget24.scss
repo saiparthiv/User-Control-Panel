@@ -1,0 +1,79 @@
+//
+// Widget24
+//
+
+
+
+
+.kt-widget24 {
+    padding: kt-get($kt-portlet, space, desktop);
+    flex: 1;
+
+    .kt-widget24__details {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .kt-widget24__info {
+            .kt-widget24__title {
+                display: flex;
+                font-size: 1.1rem;
+                font-weight: 500;
+                color: kt-base-color(label, 3);
+                transition: color 0.3s ease;
+
+                &:hover {
+                    transition: color 0.3s ease;
+                    color: kt-brand-color();
+                }
+            }
+
+            .kt-widget24__desc {
+                color: kt-base-color(label, 2);
+                font-weight: 400;
+            }
+        }
+
+        .kt-widget24__stats {
+            font-size: 1.75rem;
+            font-weight: 500;
+            padding-left: 0.5rem;
+        }
+    }
+
+    .progress {
+        height: 0.5rem;
+        margin: 2rem 0 0.5rem 0;
+    }
+
+    .kt-widget24__action {
+        display: flex;
+        justify-content: space-between;
+        font-weight: 400;
+
+        .kt-widget24__change {
+            color: kt-base-color(label, 2);
+        }
+
+        .kt-widget24__number {
+            color: kt-base-color(label, 2);
+        }
+    }
+
+    // solid bg 
+    &.kt-widget24--solid {
+        border: 1px solid kt-base-color(grey, 2);
+        padding: 1rem;
+
+        @include kt-rounded {
+            border-radius: $kt-border-radius;
+        }
+    }
+}
+
+
+@include kt-tablet-and-mobile {
+    .kt-widget24 {
+        padding: kt-get($kt-portlet, space, mobile);
+    }
+}

@@ -1,0 +1,75 @@
+//
+// Widget29
+//
+
+
+
+
+.kt-widget29 {
+    margin-top: 1rem;
+
+    .kt-widget29__content {
+        margin-bottom: 1.25rem;         
+        padding: 2rem;
+        background-color: #fff;
+
+        .kt-widget29__title {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: kt-base-color(label, 3);
+        }
+
+        .kt-widget29__item {
+            display: flex;
+
+            .kt-widget29__info {
+                flex: 1;
+                text-align: left;
+
+                .kt-widget29__subtitle {
+                    display: block;
+                    color: kt-base-color(label, 2);
+                    font-weight: 400;
+                    font-size: 1rem;
+                    padding: 0.25rem 0;
+                }
+
+                .kt-widget29__stats {
+                    display: block;
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                }
+            }
+        }
+
+        &:last-child {
+            margin-bottom: 0;
+        }
+    }
+
+    .kt-widget29__actions {
+        margin-top: 1.5rem;
+        padding: 0rem;
+    }
+}
+
+ 
+@include kt-mobile {
+	.kt-widget29 {
+	    .kt-widget29__content {
+	    	padding: 2.2rem 1rem;	
+
+	    	.kt-widget29__item {
+	    		.kt-widget29__info {
+	    			> span {
+	    				padding-right: 1rem;
+
+	    				&:last-child {
+	    					padding-right: 0;
+	    				}
+	    			}
+	    		} 
+	    	}    		 
+	    }    	 	 	 
+	}
+}

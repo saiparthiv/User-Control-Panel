@@ -1,0 +1,64 @@
+//
+// Widget15
+//
+
+
+
+
+.kt-widget15 {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+
+    // Items
+    .kt-widget15__items {
+        flex-grow: 1;   
+
+        &.kt-widget15__items--bottom {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        // Item
+        .kt-widget15__item {
+            // Stats
+            .kt-widget15__stats {
+                font-size: 1.1rem;
+                font-weight: 500; 
+                color: kt-base-color(label, 2);
+            }
+                
+            // Text
+            .kt-widget15__text {
+                font-size: 1rem;
+                float: right;
+                margin-top: 0.3rem;
+                font-weight: 400;
+                color: kt-base-color(label, 2);
+            }
+
+            // Progress
+            .progress {
+                margin-bottom: 1.6rem;
+                height: 0.45rem
+            }    
+        }          
+        
+        // Description
+        .kt-widget15__desc {
+            margin-top: 0.5rem;
+            font-size: 0.9rem;
+            font-weight: 400; 
+            color: kt-base-color(label, 2);
+        } 
+    }          
+
+    .kt-widget4__chart {
+    }
+
+    .kt-widget15__map {
+
+    }
+}     	

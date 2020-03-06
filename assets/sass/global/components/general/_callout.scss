@@ -1,0 +1,100 @@
+//
+// Callout
+//
+
+
+.kt-callout{
+	padding: 1.5rem;
+
+	.kt-callout__body{
+		display: flex;
+		align-items: center;
+
+		.kt-callout__content{
+			flex: 2;
+			
+			.kt-callout__title{
+				font-size: 1.85rem;
+				font-weight: 500;
+				color: kt-base-color(label, 4);
+				margin-bottom: 1rem;
+			}
+
+			.kt-callout__desc{
+				font-size: 1.15rem;
+				line-height: 2rem;
+				color: #9392a0;
+				padding-right: 2rem;
+				font-weight: 400;
+
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+
+		.kt-callout__action{
+			flex: 1;
+			display: flex;
+			flex-direction: column;
+			align-items: flex-end;
+			justify-content: center;
+
+			.btn.btn-custom {
+				padding: 1rem 1.3rem;
+				font-size: 0.9rem;
+			}
+		}
+	}
+
+	&--diagonal-bg{
+		overflow: hidden;
+		position: relative;
+		background-color: #fff;
+
+		.kt-callout__body{
+			position: relative;
+			z-index: 2;
+		}
+
+		&:before{
+			content: ' ';
+			position: absolute;
+			top: 0;
+			left:0;
+			right: 0;
+			bottom: 0;
+			background-color: kt-base-color(grey, 1);
+			z-index: 1;
+		}
+
+		&:after{
+			content: ' ';
+			width: 200%;
+			height: 1000px;
+			position: absolute;
+			z-index: 1;
+			top: 0;
+			left:45%;
+			transform: rotate(20deg);
+			background-color: #fff;
+		}
+
+	}
+
+	@each $name, $color in $kt-state-colors{
+
+		&--#{$name}{
+			background-color: rgba(kt-state-color(#{$name}), 0.07);	
+
+			&.kt-callout--diagonal-bg{
+				background-color: #fff;
+
+				&:before{
+					background-color: rgba(kt-state-color(#{$name}), 0.15);	
+				}
+			}
+		}		
+	}
+}
+

@@ -1,0 +1,93 @@
+//
+// User Card
+//
+
+
+
+.kt-user-card {
+    display: flex;
+    align-items: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 2rem 1rem;
+    background-color: #f9fafe;
+
+    // Elements
+    .kt-user-card__avatar {
+        .kt-badge,
+        img {
+            width: 60px;
+            height: 60px;
+
+            @include kt-rounded {
+                border-radius: 4px;
+            }
+        }
+
+        .kt-badge {
+            font-size: 2.2rem;
+        }
+    }
+
+    .kt-user-card__name {
+        flex-grow: 1;
+        color: kt-base-color(label, 3);
+        font-size: 1.3rem;
+        font-weight: 500;
+        padding-left: 1rem;
+    }
+
+    .kt-user-card__badge {
+        padding-left: 0.5rem;
+    }
+
+    // Skins
+    &.kt-user-card--skin-light {
+        .kt-user-card__name {
+            color: kt-base-color(label, 3);
+        }
+
+        .kt-user-card__avatar {
+            .kt-badge {
+                //background-color: rgba(#fff, 0.1);
+            }
+        }
+    }
+
+    &.kt-user-card--skin-dark {
+        .kt-user-card__name {
+            color: #fff;
+        }
+
+        .kt-user-card__avatar {
+            .kt-badge {
+                background-color: rgba(#fff, 0.1);
+            }
+        }
+    }
+}
+
+
+@include kt-tablet-and-mobile {
+    .kt-user-card {
+        padding: 1rem 1rem;
+
+        // Elements
+        .kt-user-card__avatar {
+            .kt-badge,
+            img {
+                width: 40px;
+                height: 40px;
+            }
+        }
+
+        .kt-user-card__name {
+            font-size: 1.1rem;
+            padding-left: 0.5rem;
+        }
+
+        .kt-user-card__badge {
+            padding-left: 0.5rem;
+        }
+    }
+}

@@ -1,0 +1,110 @@
+//
+// Infobox
+//
+
+
+
+.kt-infobox{
+	padding:1.5rem;
+
+	.kt-infobox__title{
+		font-size: 2rem;
+		color: kt-base-color(label, 4);
+	}
+
+	.kt-infobox__subtitle {
+		font-size: 1.3rem;
+		font-weight: 400;
+		color: kt-base-color(label, 4);
+		margin-bottom: 1.2rem;
+	}
+
+	.kt-infobox__header{
+		margin-bottom: 2rem;
+		display: flex;
+		align-items: center;
+
+		.kt-infobox__badge{
+			margin: auto 0 auto auto;
+			font-size: 1rem;
+			font-weight: 500;
+			padding: 0.5rem 1rem;
+			border-radius: 5px;
+			color: kt-state-color(brand, base);
+			background-color: rgba(kt-state-color(brand, base), 0.15);
+		}
+	}
+
+	.kt-infobox__body{
+		.kt-infobox__section{
+			margin-bottom: 2rem;
+
+			.kt-infobox__content{
+				font-weight: 400;
+				color: #9392a0;
+				font-size: 1.15rem;
+				line-height: 2rem;
+
+				.table{
+					font-size: 1rem;
+
+					thead{
+						th{
+							padding-top: 0.8rem;
+							padding-bottom: 0.8rem;
+						}
+					}					
+				}
+			}
+
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+
+		.kt-nav{
+			.kt-nav__item{
+				.kt-nav__link{
+					.kt-nav__link-text{
+						font-size: 1.25rem;
+					}
+				}
+			}
+		}
+
+		.accordion{
+
+			.card{
+				.card-header{
+					.card-title{
+						font-size: 1.25rem;
+						font-weight: 400;
+					}	
+				}
+				.card-body{
+					font-size: 1.15rem;
+					line-height: 2rem;
+					font-weight: 400;
+					color: #9392a0;
+				}	
+				
+				&:last-child{
+					margin-bottom: 0;
+				}
+			}
+		}
+	}
+
+	@each $name, $color in $kt-state-colors {
+		&--#{$name}{
+
+			.kt-infobox__header{
+
+				.kt-infobox__badge{
+					color: kt-state-color(#{$name}, base);
+					background-color: rgba(kt-state-color(#{$name}, base), 0.15);
+				}
+			}
+		}
+	}
+}

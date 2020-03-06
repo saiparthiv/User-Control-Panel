@@ -1,0 +1,65 @@
+//
+// Widget 1
+//
+
+
+
+
+.kt-widget1 {
+    padding: kt-get($kt-portlet, space, desktop);
+
+    &.kt-widget1--fit {
+        padding: 0;
+    }
+
+    &.kt-widget1--paddingless {
+        padding: 0;
+    }
+
+    .kt-widget1__item {
+    	padding: 1.1rem 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:last-child {
+            padding-bottom: 0;
+        }
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        .kt-widget1__info {
+        	.kt-widget1__title {
+        		font-size: 1.1rem;
+        		font-weight: 500;        	
+                color: kt-base-color(label, 3);
+        	}
+
+        	.kt-widget1__desc {
+        		font-size: 1rem;
+        		font-weight: normal;
+                color: kt-base-color(label, 2);
+        	}
+        }
+
+        .kt-widget1__number {
+        	font-size: 1.4rem;
+        	font-weight: 600;
+            color: kt-base-color(label, 2);
+        }  
+
+    	&:last-child {
+    		border-bottom: 0;            
+    	}
+        
+        border-bottom: 0.07rem dashed kt-base-color(grey, 2);
+    } 
+} 
+ 
+@include kt-tablet-and-mobile {
+    .kt-widget1 {
+        padding: kt-get($kt-portlet, space, mobile);
+    }
+}

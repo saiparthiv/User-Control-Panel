@@ -1,0 +1,44 @@
+//
+// Searchbar
+//
+
+
+
+.kt-searchbar {
+    .input-group {
+        .input-group-text {
+            border: none;
+            background-color: #f2f3f7; 
+            padding: 0 0.65rem 0 1rem; 
+            
+            .kt-svg-icon {
+                height: 20px;
+                width: 20px;                
+            }
+
+            i {
+                font-size: 1rem;
+            }
+        }
+
+        .form-control {
+            border: none;
+            background-color: #f2f3f7; 
+            padding: 0;           
+        }     
+    }
+
+    .kt-input-icon {
+        .form-control {
+            border: none;
+            background-color: #f2f3f7; 
+        } 
+        
+        .kt-input-icon__icon {
+            .kt-svg-icon {
+                height: 20px;
+                width: 20px;                
+            }
+        }
+    }       
+}

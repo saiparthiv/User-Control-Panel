@@ -1,0 +1,48 @@
+//
+// SVG Icon
+//
+
+
+
+// Base
+.kt-svg-icon {
+    height: 23px;
+    width: 23px;
+
+    g {
+        [fill] {
+            fill: kt-brand-color();
+        }
+    }
+
+    @each $name, $color in $kt-state-colors {
+        &.kt-svg-icon--#{$name} {
+            g {
+                [fill] {
+                    fill: kt-get($color, base) !important;
+                }
+            }
+        }
+    }
+
+    // Sizing
+    &.kt-svg-icon--sm {
+        height: 20px;
+        width: 20px;
+    }
+
+    &.kt-svg-icon--md {
+        height: 30px;
+        width: 30px;
+    }
+
+    &.kt-svg-icon--lg {
+        height: 40px;
+        width: 40px;
+    }
+
+    &.kt-svg-icon--xl {
+        height: 50px;
+        width: 50px;
+    }
+}

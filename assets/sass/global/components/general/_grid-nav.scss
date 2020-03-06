@@ -1,0 +1,164 @@
+//
+// Grid Nav
+//
+
+
+
+
+// Component Base
+@mixin kt-grid-nav-base() {
+    .kt-grid-nav {
+        padding:0;
+        margin: 0; 
+        display: table;
+        table-layout: fixed;
+        width: 100%;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        // nav row
+        > .kt-grid-nav__row {
+            display: table-row;       
+
+            // nav item 
+            > .kt-grid-nav__item {
+                display: table-cell; 
+                vertical-align: middle;   
+                text-align: center;
+                padding: 3.3rem 0.75rem;
+                @include kt-transition();
+
+                &:hover {
+                    text-decoration: none;
+                    @include kt-transition();
+                }
+
+                // nav icon
+                .kt-grid-nav__icon {
+                    text-align: center;
+                    font-size: 2.5rem;
+                }
+
+                // nav text
+                .kt-grid-nav__title {
+                    display: block;
+                    line-height: 1;
+                    text-align: center;
+                    margin: 10px 0 0 0;
+                    font-size: 1.2rem;
+                    font-weight: 500;
+                }
+
+                // nav text
+                .kt-grid-nav__desc {
+                    display: block;
+                    line-height: 1;
+                    text-align: center;
+                    margin: 10px 0 0 0;
+                    font-size: 1rem;
+                    font-weight:400;
+                }
+            }
+        }
+
+        .dropdown-menu & {
+            @include kt-rounded {
+                border-bottom-left-radius: $kt-border-radius;
+                border-bottom-right-radius: $kt-border-radius;
+            }
+        }
+    }
+
+    @include kt-tablet-and-mobile {
+        .kt-grid-nav {
+            // nav row
+            > .kt-grid-nav__row {
+                // nav item 
+                > .kt-grid-nav__item {
+                    padding: 1rem 0.5rem;
+                }
+            }  
+        }
+    }
+}
+
+// Component Skin
+@mixin kt-grid-nav-skin() {
+    .kt-grid-nav {
+        .kt-grid-nav__row {
+            .kt-grid-nav__item {
+                border-right: 1px solid kt-base-color(grey, 2);
+                border-bottom: 1px solid kt-base-color(grey, 2);
+
+                &:last-child {
+                    border-right: 0;
+                }
+
+                .kt-grid-nav__icon {
+                    color: kt-state-color(brand);
+                }
+
+                .kt-grid-nav__title {
+                    color: kt-brand-color();
+                }                
+
+                .kt-grid-nav__desc {
+                    color: kt-base-color(label, 2);
+                } 
+
+                &:hover {
+                    background: kt-base-color(grey, 1);
+
+                    .kt-grid-nav__icon {
+                        color: kt-base-color(label, 3);
+                    }
+                }   
+            }
+
+            &:last-child {
+                .kt-grid-nav__item {
+                    border-bottom: 0 !important;
+                }
+            }
+        }
+
+        // Dark skin
+        &.kt-grid-nav--skin-dark {
+            .kt-grid-nav__item {
+                border-right: 1px solid rgba(#fff, 0.1);
+                border-bottom: 1px solid rgba(#fff, 0.1);
+
+                &:last-child {
+                    border-right: 0;
+                }
+
+                .kt-grid-nav__icon {
+                    color: kt-brand-color();
+                }
+
+                .kt-grid-nav__title {
+                    color: #fff;
+                }
+
+                .kt-grid-nav__desc {
+                    color: rgba(#fff, 0.5);
+                }                
+
+                &:hover {
+                    background: transparent;
+
+                    .kt-grid-nav__icon {
+                        color: kt-brand-color();
+                    }
+                }   
+            }
+        }
+    }
+}
+
+// Build
+// Component Base
+@include kt-grid-nav-base();
+
+// Component Skin
+@include kt-grid-nav-skin();
